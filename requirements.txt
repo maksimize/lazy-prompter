@@ -1,0 +1,8 @@
+fastapi
+pydantic
+rich
+uvicorn
+starlette
+itsdangerous
+python-multipart
+ollama

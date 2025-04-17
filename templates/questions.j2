@@ -1,0 +1,30 @@
+{% extends 'base.j2' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+    {% if prompt_model is defined %}
+        <p><pre><code>{{ prompt_model.get_prompt() }}</code></pre></p>
+    {% endif %}
+
+    <form action="/submit-answers" method="post">
+    
+        {% for q, question in enumerate(questions) %}
+        <blockquote>
+            <label>{{ question.question }}</label>
+            {% for a, answer in enumerate(question.answers) %}
+                <div>
+                    <input type="radio" id="q{{ q }}_a{{ a }}" name="q{{ q }}" value="{{ answer }}" required>
+                    <label for="q{{ q }}_a{{ a }}">{{ answer }}</label>
+                </div>
+
+            {% endfor %}
+        </blockquote>
+        {% endfor %}
+
+        <button type="submit" formaction="/submit-answers/more">Ask More</button>
+        <button type="submit" formaction="/submit-answers/enough" formmethod="post">Enough</button>
+
+    </form>
+
+{% endblock %}

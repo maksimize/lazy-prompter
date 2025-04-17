@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}The Lazy prompter! 🦥{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <main>
+    {% block header %}
+    <h1>Welcome to the Lazy prompter! 🦥</h1>
+    {% endblock %}
+
+        {% block content %}
+        <p>Default content goes here.</p>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+</body>
+</html>

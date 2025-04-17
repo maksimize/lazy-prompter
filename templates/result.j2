@@ -1,0 +1,13 @@
+{% extends 'base.j2' %}
+
+
+{% block content %}
+    <h2>The Prompt</h2>
+    <p><pre><code>{{ prompt_model.get_prompt() }}</code></pre></p>
+    {% if answer is defined %}
+    <h2>The Answer</h2>
+
+    <p><pre><code>{{ answer }}<p><pre><code>
+    {% endif %}
+    <a href="/" class="back-btn">Start Again</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.j2' %}
+
+
+{% block content %}
+    <p>Please enter initial prompt here:</p>
+    <form action="/submit-prompt" method="post">
+        <textarea name="user_prompt" placeholder="Enter your information here..." required></textarea>
+        <button type="submit">Next</button>
+    </form>
+
+{% endblock %}
